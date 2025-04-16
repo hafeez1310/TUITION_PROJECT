@@ -6,7 +6,7 @@ const fs = require("fs")
 
 const app = express();
 
-app.listen(5001, () => console.log("Server started successfully ....!!!"));
+app.listen(8000, () => console.log("Server started successfully ....!!!"));
 
 app.use(express.json());
 
