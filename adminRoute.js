@@ -1,0 +1,26 @@
+const express = require("express")
+const router = express.Router()
+const adminController = require("../controllers/adminController")
+const tutorController = require("../controllers/tutorController")
+const { upload } = require("../utils/util")
+
+router.post("/register",adminController.register)
+router.post("/login",adminController.login)
+router.get("/dashboard",adminController.dashboard)
+router.post("/addCenter",adminController.addCenter)
+router.post("/addTutor",tutorController.signup)
+router.get("/getuserbyCenterid/:id",adminController.getusersbyCenterid)
+router.get("/getallcenters",adminController.getallcenters)
+router.get("/getAllStudents",adminController.allStudents)
+router.get("/getAllStudentsAtCenter/:id",adminController.getAllStudentsAtCenter)
+router.get("/getAllStudentsByTutorId/:id",adminController.getAllStudentsByTutor)
+router.get("/getTutorsList",adminController.getUsersList)
+router.delete("/removeUser",adminController.deleteUser)
+router.get("/attendanceOfAllStudents",tutorController.attedanceOfAllStudents)
+router.get("/attendanceHistoryOfStudent",tutorController.attedanceHistoryOfStudent)
+router.get("/attendanceListOfTutor",adminController.attedanceList)
+router.get("/attendanceHistoryOfTutor",adminController.attedanceHistory)
+router.delete("/deleteAttendance",adminController.deleteAttendance)
+
+
+module.exports=router
